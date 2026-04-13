@@ -3,6 +3,6 @@
    become: yes
    tasks:
     - name: copy mongodb.repo
-      ansbile.biultin.copy:
+      ansible.builtin.copy:
         src: mongo.repo
         dest: /etc/yum.repos.d/mongo.repo
