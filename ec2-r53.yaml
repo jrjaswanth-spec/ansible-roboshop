@@ -41,7 +41,7 @@
       zone: "{{ domain_name }}"
       record: "{{ item.item }}.{{ domain_name }}" #mongodb.jrdaws.life
       type: A
-      ttyl: 1
+      ttl: 1
       value: "{{ item.instances[0].private_ip_address }}"
       overwrite: true
     loop: "{{ ec2_output.results }}"
