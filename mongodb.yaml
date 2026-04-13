@@ -4,6 +4,5 @@
    tasks:
     - name: copy mongodb.repo
       ansbile.biultin.copy:
-      src: mongo.repo
-      dest: /et/yum.repos.d/mongo.repo
-      
+        src: mongo.repo
+        dest: /etc/yum.repos.d/mongo.repo
