@@ -3,7 +3,7 @@
   connection: local
   vars:
     ami_id: ami-0220d79f3f480ecf5
-    sg_id: sg-0bf7b888c01816e0d
+    sg_id:  sg-0bf7b888c01816e0d
     zone_id: Z0240123A9FCWL2SEDEO
     domain_name: jrdaws.life
     # we can pass instances through command line using -e
