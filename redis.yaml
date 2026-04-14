@@ -4,12 +4,18 @@
   tasks: 
   - name: disable default redis
     ansible.builtin.command: dnf module disable redis -y
+  
 
   - name: enable redis 7
+    ansible.builtin.command: dnf install enable redis -y
+
+
+  - name: install redis
     ansible.builtin.package:
       name: redis
       state: present
-
+      
+          
   - name: allow remote connections
     ansible.builtin.replace:
       path: /etc/redis/redis.conf
