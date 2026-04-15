@@ -6,12 +6,13 @@
     sg_id:  sg-0bf7b888c01816e0d
     zone_id: Z0240123A9FCWL2SEDEO
     domain_name: jrdaws.life
-    # we can pass instances through command line using -e
+    # we can also pass instances through command line using -e
     instances: 
-    - mongodb
-    - redis
-    - rabbitmq
-    - mysql
+    
+    # - mongodb
+    # - redis
+    # - rabbitmq
+    # - mysql
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
