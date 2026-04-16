@@ -67,12 +67,21 @@
       src: shipping.service
       dest: /etc/systemd/system/shipping.service
 
+  - name: Create roboshop MySQL user with remote access
+  community.mysql.mysql_user:
+    login_host: mysql.jrdaws.life
+    login_user: root
+    login_password: RoboShop@1
+    host: "%"
+    priv: "*.*:ALL"
+    state: present    
+
   - name: import shipping data into mysql
     community.mysql.mysql_db:
       state: import
-      name: shipping
+      name: all
       login_host: mysql.jrdaws.life
-      login_user: roboshop
+      login_user: root
       login_password: RoboShop@1
       target: "{{ item }}"
     loop:
