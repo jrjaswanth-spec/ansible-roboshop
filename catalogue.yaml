@@ -14,7 +14,7 @@
       state: present
      
      
-   - name: create roboshop user  
+   - name: create roboshop system user  
      ansible.builtin.user:
       name: roboshop
       comment: roboshop system user
@@ -22,11 +22,12 @@
       shell: /sbin/nologin
       home: /app
 
+
    - name: create app directory
      ansible.builtin.file:
        state: directory
        path: /app
-
+  # Safe to remove directory, because 2nd time if we run it will download freshly. no error if does not exist
    - name: download catalogue application
      ansible.builtin.get_url:
        url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
@@ -82,3 +83,10 @@
         enabled: yes
         state: started
 
+- name: daemon reload enable and start
+  ansible.builtin.systemd_service:
+      name: catalogue
+      enabled: true
+      state: started
+      daemon_reload: true
+  
