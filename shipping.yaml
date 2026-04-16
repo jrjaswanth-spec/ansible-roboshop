@@ -68,7 +68,7 @@
       dest: /etc/systemd/system/shipping.service
 
   - name: Create roboshop MySQL user with remote access
-  community.mysql.mysql_user:
+    community.mysql.mysql_user:
     login_host: mysql.jrdaws.life
     login_user: root
     login_password: RoboShop@1
